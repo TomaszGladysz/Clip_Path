@@ -3,25 +3,55 @@ html{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.heli{
+    width: 50px !important;
+    height: 20px !important;
+}
+
+
 .clip-inset{  
-  
-    clip-path: inset(209px 242px 193px 11px);
+    clip-path: inset(209px 400px 193px 11px);
     /* les valeurs sont dans le sens de l'éguie d'une montre */
+    transition: 0.3s all ease-in-out;
+    &:hover{
+        clip-path: inset(209px 242px 193px 11px);
+    }
 } 
 
 .clip-circle{
-    clip-path: circle(40%);
+    clip-path: circle(10% at 43% 53%);
+    transition: 0.3s all ease-in-out;
+    &:hover{
+        clip-path: circle(100% at 43% 53%);
+    }
 }
 
 .clip-ellipse{
-    clip-path: ellipse(300px 300px at 25% 15%)
+    clip-path: ellipse(150px 100px at 31% 50%);
+    transition: 0.3s all ease-in-out;
+    &:hover{
+        clip-path: ellipse(400px 400px);
+
+    }
 }
 
 .clip-polygon{
     clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    transition: 0.3s all ease-in-out;
+    &:hover{
+        clip-path: polygon(25% 0, 100% 50%, 75% 100%, 0 50%);
+    }
+}
+
+.clip-url{
+    clip-path: url(#myPath);
 }
 
 
+code{
+    width: 400px;
+    text-align: left;
+}
 
 
 .wrapper{

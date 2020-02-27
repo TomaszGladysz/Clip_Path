@@ -9,43 +9,87 @@
 </head>
 <body>
 
+
+
+
     <div class="wrapper">
+        
         <h1>
+            <img class="heli" src="img/HELIKOPTER-BEVEGELIG.SmallHeli.gif" alt="Helicoper">
             Clip-path Demo Tomasz
+            <img class="heli" src="img/HELIKOPTER-BEVEGELIG.SmallHeli.gif" alt="Helicoper">
         </h1>
         <p>
-            Clip-path est une propriété css qui permet de montrer une partie specifiée d'un élément et cacher tout le reste. Clip-path est utilisée la plupart du temps pour des images mais peut etre également utilisé sur du texte
+            Clip-path est une propriété css qui permet de montrer une partie specifiée d'un élément et cacher tout le reste. Clip-path est utilisée la plupart du temps pour des images mais peut etre également utilisé sur du texte. <br>
+            L'élément garde sa taille originale même si il est pas entièrement visible.
+            Ce qui est intérssant c'est qu'on peut lui mettre une transition pour donner un effet au click ou au survol.
         </p>
 
         <h2>Image originale</h2>
         <img src="img/img0.jpg">
-        <h2>Image clippé EX_1</h2>
+        <h2>Clip-path inset</h2>
         <code>
-            clip-path: inset(209px 242px 193px 11px); <br>
-            /* les valeurs sont dans le sens de l'éguie d'une montre */
+            clip-path: inset(209px 400px 193px 11px); <br>
+            /* les valeurs sont dans le sens de l'éguie d'une montre */ <br>
+            transition: 0.3s all ease-in-out; <br>
+            &:hover{ <br>
+                clip-path: inset(209px 242px 193px 11px); <br>
+            }        
         </code>
         <img class="clip-inset" src="img/img0.jpg">
 
-        <h2>Image clippé EX_2</h2>
+        <h2>Clip-path Circle</h2>
         <code>
-            clip-path: circle(40%);
+            clip-path: circle(10% at 43% 53%); <br>
+            transition: 0.3s all ease-in-out; <br>
+            &:hover{ <br>
+                clip-path: circle(100% at 43% 53%);<br>
+            }
         </code>
         <img class="clip-circle" src="img/img0.jpg">
 
-        <h2>Image clippé EX_3</h2>
+        <h2>Clip-path Ellipse</h2>
         <code>
-            clip-path: ellipse(300px 300px at 25% 15%)
+            clip-path: ellipse(150px 100px at 31% 50%); <br>
+            transition: 0.3s all ease-in-out; <br>
+            &:hover{ <br>
+                clip-path: ellipse(400px 400px); <br>
+        
+            }        
         </code>
         <img class="clip-ellipse" src="img/img0.jpg">
         
-        <h2>Image clippé EX_4</h2>
+        <h2>Clip-path Polygon</h2>
         <code>
-            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); <br>
+            transition: 0.3s all ease-in-out; <br>
+            &:hover{ <br>
+                clip-path: polygon(25% 0, 100% 50%, 75% 100%, 0 50%); <br>
+            }        
         </code>
         <img class="clip-polygon" src="img/img0.jpg">
         
+        <h2>Clip-path url</h2>
+        <code>
+            clip-path: url(#myPath)
+
+
+        </code>
+        <img class="clip-url" src="img/img0.jpg">
+        
+        
+
     </div>
 
+    <svg>
+        <clipPath id="myPath" clipPathUnits="objectBoundingBox">
+          <path d="M0.5,1
+            C 0.5,1,0,0.7,0,0.3
+            A 0.25,0.25,1,1,1,0.5,0.3
+            A 0.25,0.25,1,1,1,1,0.3
+            C 1,0.7,0.5,1,0.5,1 Z"/>
+        </clipPath>
+    </svg>
 
 </body>
 <script src="js/main.min.js">
